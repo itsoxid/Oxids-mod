@@ -15,7 +15,7 @@ import net.oxid.tutorialmod.TutorialMod;
 import net.oxid.tutorialmod.item.ModItemGroup;
 
 public class ModBlocks {
-    public static final Block DIVINIUM_ORE = registerBlock("DIVINIUM_ORE",
+    public static final Block DIVINIUM_ORE = registerBlock("divinium_ore",
             new OreBlock(FabricBlockSettings.of(Material.AMETHYST).strength(4f).requiresTool(),
                     UniformIntProvider.create(3, 7)), ModItemGroup.Divinium);
 

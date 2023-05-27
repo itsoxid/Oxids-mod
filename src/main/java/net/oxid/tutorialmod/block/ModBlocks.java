@@ -19,6 +19,11 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.AMETHYST).strength(4f).requiresTool(),
                     UniformIntProvider.create(3, 7)), ModItemGroup.Divinium);
 
+    public static final Block DIVNINIUM_BLOCK = registerBlock("divinium_block",
+            new Block(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool()),
+            ModItemGroup.Divinium);
+
+
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

@@ -1,0 +1,5 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tutorialmod:block/soul_lantern_block_off"}
+}

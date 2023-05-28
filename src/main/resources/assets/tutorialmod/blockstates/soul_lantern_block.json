@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model": "tutorialmod:block/soul_lantern_block_on"},
+    "lit=false": { "model": "tutorialmod:block/soul_lantern_block_off"}
+  }
+}

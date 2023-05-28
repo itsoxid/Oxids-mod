@@ -13,6 +13,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.oxid.tutorialmod.TutorialMod;
 import net.oxid.tutorialmod.block.custom.JumpyBlock;
+import net.oxid.tutorialmod.block.custom.SoulLaternBlock;
 import net.oxid.tutorialmod.item.ModItemGroup;
 
 public class ModBlocks {
@@ -27,6 +28,10 @@ public class ModBlocks {
     public static final Block JUMPY_BLOCK = registerBlock("jumpy_block",
             new JumpyBlock(FabricBlockSettings.of(Material.AMETHYST).strength(4f).requiresTool()),
             ModItemGroup.Divinium);
+
+    public static final Block SOUL_LANTERN_BLOCK = registerBlock("soul_lantern_block",
+            new SoulLaternBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4f).requiresTool()
+                    .luminance(state -> state.get(SoulLaternBlock.LIT) ? 15 : 0)), ModItemGroup.Divinium);
 
 
 

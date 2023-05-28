@@ -17,7 +17,7 @@ public class HashCropBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.HASH_CROP_SEEDS;
+        return ModItems.HASH_SEEDS;
     }
 
     @Override

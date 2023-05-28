@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.oxid.tutorialmod.TutorialMod;
+import net.oxid.tutorialmod.block.custom.JumpyBlock;
 import net.oxid.tutorialmod.item.ModItemGroup;
 
 public class ModBlocks {
@@ -21,6 +22,10 @@ public class ModBlocks {
 
     public static final Block DIVNINIUM_BLOCK = registerBlock("divinium_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool()),
+            ModItemGroup.Divinium);
+
+    public static final Block JUMPY_BLOCK = registerBlock("jumpy_block",
+            new JumpyBlock(FabricBlockSettings.of(Material.AMETHYST).strength(4f).requiresTool()),
             ModItemGroup.Divinium);
 
 

@@ -1,10 +1,13 @@
 {
   "item.tutorialmod.raw_divinium": "Raw Divinium",
   "item.tutorialmod.divinium": "Divinium",
+
   "item.tutorialmod.eight_ball": "Eight Ball",
 
   "block.tutorialmod.divinium_ore": "Divinium Ore",
   "block.tutorialmod.divinium_block": "Divinium Block",
+
+  "block.tutorialmod.jumpy_block": "Jumpy Block",
 
   "itemGroup.tutorialmod.divinium": "Divinium"
 }

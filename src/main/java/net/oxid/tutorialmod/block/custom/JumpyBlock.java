@@ -22,7 +22,10 @@ public class JumpyBlock extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
                               Hand hand, BlockHitResult hit) {
-        player.sendMessage(Text.literal("Right Clicked This!"));
+
+        if(!world.isClient() && hand == Hand.MAIN_HAND) {
+            player.sendMessage(Text.literal("Right Clicked This!"));
+        }
 
         return super.onUse(state, world, pos, player, hand, hit);
     }

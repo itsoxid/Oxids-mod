@@ -1,0 +1,5 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "tutorialmod:block/hash_crop_0"}
+}

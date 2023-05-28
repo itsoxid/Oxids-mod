@@ -3,6 +3,7 @@ package net.oxid.tutorialmod.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.item.BlockItem;
@@ -12,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.oxid.tutorialmod.TutorialMod;
+import net.oxid.tutorialmod.block.custom.HashCropBlock;
 import net.oxid.tutorialmod.block.custom.JumpyBlock;
 import net.oxid.tutorialmod.block.custom.SoulLaternBlock;
 import net.oxid.tutorialmod.item.ModItemGroup;
@@ -33,7 +35,14 @@ public class ModBlocks {
             new SoulLaternBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4f).requiresTool()
                     .luminance(state -> state.get(SoulLaternBlock.LIT) ? 15 : 0)), ModItemGroup.Divinium);
 
+    public static final Block HASH_CROP = registerBlockWithoutItem("hash_crop",
+            new HashCropBlock(FabricBlockSettings.copy(Blocks.NETHER_WART)));
 
+
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registry.BLOCK, new Identifier(TutorialMod.MOD_ID, name), block);
+    }
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

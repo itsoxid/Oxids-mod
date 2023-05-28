@@ -4,11 +4,15 @@
 
   "item.tutorialmod.eight_ball": "Eight Ball",
 
+  "item.tutorialmod.hash": "Hash",
+  "item.tutorialmod.hash_crop_seeds": "Eight Ball",
+
   "block.tutorialmod.divinium_ore": "Divinium Ore",
   "block.tutorialmod.divinium_block": "Divinium Block",
 
   "block.tutorialmod.jumpy_block": "Jumpy Block",
   "block.tutorialmod.soul_lantern_block": "Soul Lantern Block",
+  "block.tutorialmod.hash_crop": "Hash Crop",
 
   "itemGroup.tutorialmod.divinium": "Divinium"
 }

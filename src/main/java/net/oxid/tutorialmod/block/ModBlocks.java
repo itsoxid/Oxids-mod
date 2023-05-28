@@ -36,7 +36,7 @@ public class ModBlocks {
                     .luminance(state -> state.get(SoulLaternBlock.LIT) ? 15 : 0)), ModItemGroup.Divinium);
 
     public static final Block HASH_CROP = registerBlockWithoutItem("hash_crop",
-            new HashCropBlock(FabricBlockSettings.copy(Blocks.NETHER_WART)));
+            new HashCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
 
 
 

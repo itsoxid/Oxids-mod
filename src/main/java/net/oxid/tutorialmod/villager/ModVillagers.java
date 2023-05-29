@@ -16,7 +16,6 @@ import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
 import net.oxid.tutorialmod.TutorialMod;
 import net.oxid.tutorialmod.block.ModBlocks;
-import net.oxid.tutorialmod.item.ModItems;
 
 public class ModVillagers {
     public static final PointOfInterestType JUMPY_POI = registerPOI("jumpy_poi", ModBlocks.JUMPY_BLOCK);
@@ -31,11 +30,11 @@ public class ModVillagers {
 
     public static PointOfInterestType registerPOI(String name, Block block) {
         return PointOfInterestHelper.register(new Identifier(TutorialMod.MOD_ID, name),
-                1,1, ImmutableSet.copyOf(block.getStateManager().getStates()));
+                1, 1, ImmutableSet.copyOf(block.getStateManager().getStates()));
     }
 
      public static void registerVillagers() {
-         TutorialMod.LOGGER.debug("Registering Villiagers for " + TutorialMod.MOD_ID);
+         TutorialMod.LOGGER.debug("Registering Villagers for " + TutorialMod.MOD_ID);
      }
 
      public static void registerTrades() {

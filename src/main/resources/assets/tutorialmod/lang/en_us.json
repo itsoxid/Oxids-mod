@@ -1,6 +1,9 @@
 {
   "item.tutorialmod.raw_divinium": "Raw Divinium",
   "item.tutorialmod.divinium": "Divinium",
+  "item.tutorialmod.mithril": "Mithril",
+
+  "item.tutorialmod.linksword": "Link's Sword",
 
   "item.tutorialmod.eight_ball": "Eight Ball",
 
@@ -8,6 +11,7 @@
   "item.tutorialmod.hash_seeds": "Hash seeds",
 
   "block.tutorialmod.divinium_ore": "Divinium Ore",
+  "block.tutorialmod.mithril_ore": "Mithril Ore",
   "block.tutorialmod.divinium_block": "Divinium Block",
 
   "block.tutorialmod.jumpy_block": "Jumpy Block",

@@ -23,6 +23,12 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.DOGWOOD_SPAWN,
             VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2))); //1 tree then a 10% chance of spawning 2 trees
 
+    public static final RegistryEntry<PlacedFeature> DIVINIUM_GEODE_PLACED = PlacedFeatures.register("divinium_geode_placed",
+            ModConfiguredFeatures.DIVINIUM_GEODE, RarityFilterPlacementModifier.of(42),
+            SquarePlacementModifier.of(),
+            HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)), //60 and 50
+            BiomePlacementModifier.of());
+
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
         return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
     }

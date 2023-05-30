@@ -11,9 +11,11 @@ import net.oxid.tutorialmod.item.ModItems;
 import net.oxid.tutorialmod.painting.ModPaintings;
 import net.oxid.tutorialmod.recipe.ModRecipes;
 import net.oxid.tutorialmod.screen.ModScreenHandlers;
+import net.oxid.tutorialmod.util.ModFlammableBlocks;
 import net.oxid.tutorialmod.util.ModLootTableModifiers;
+import net.oxid.tutorialmod.util.ModStrippableBlocks;
 import net.oxid.tutorialmod.world.feature.ModConfiguredFeatures;
-import net.oxid.tutorialmod.world.gen.ModOreGeneration;
+import net.oxid.tutorialmod.world.gen.ModWorldGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
@@ -30,7 +32,7 @@ public class TutorialMod implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModPaintings.registerPaintings();
-        ModOreGeneration.generateOres();
+        ModWorldGen.generateWorldGen();
         ModLootTableModifiers.modifyLootTables();
         ModBlockEntities.registerBlockEntities();
         ModRecipes.RegisterRecipes();
@@ -38,6 +40,9 @@ public class TutorialMod implements ModInitializer {
         ModScreenHandlers.registerAllScreenHandlers();
 
         GeckoLib.initialize();
+
+        ModFlammableBlocks.registerFlammableBlocks();
+        ModStrippableBlocks.registerStrippables();
 
         FabricDefaultAttributeRegistry.register(ModEntities.OTTER, OtterEntity.setAttributes());
 

@@ -2,10 +2,7 @@ package net.oxid.tutorialmod.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -18,6 +15,7 @@ import net.oxid.tutorialmod.block.custom.HashCropBlock;
 import net.oxid.tutorialmod.block.custom.JumpyBlock;
 import net.oxid.tutorialmod.block.custom.SoulLaternBlock;
 import net.oxid.tutorialmod.item.ModItemGroup;
+import net.oxid.tutorialmod.world.feature.tree.DogwoodSaplingGenerator;
 
 public class ModBlocks {
     public static final Block DIVINIUM_ORE = registerBlock("divinium_ore",
@@ -47,7 +45,23 @@ public class ModBlocks {
             new GemInfusionStationBlock(FabricBlockSettings.of(Material.METAL)
                     .strength(4f).requiresTool().nonOpaque()), ModItemGroup.Divinium);
 
+    public static final Block DOGWOOD_LOG = registerBlock("dogwood_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), ModItemGroup.Divinium);
+    public static final Block DOGWOOD_WOOD = registerBlock("dogwood_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), ModItemGroup.Divinium);
+    public static final Block STRIPPED_DOGWOOD_LOG = registerBlock("stripped_dogwood_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), ModItemGroup.Divinium);
+    public static final Block STRIPPED_DOGWOOD_WOOD = registerBlock("stripped_dogwood_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), ModItemGroup.Divinium);
 
+    public static final Block DOGWOOD_PLANKS = registerBlock("dogwood_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), ModItemGroup.Divinium);
+    public static final Block DOGWOOD_LEAVES = registerBlock("dogwood_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), ModItemGroup.Divinium);
+
+    public static final Block DOGWOOD_SAPLING = registerBlock("dogwood_sapling",
+            new SaplingBlock(new DogwoodSaplingGenerator(),
+                    FabricBlockSettings.copy(Blocks.OAK_SAPLING)), ModItemGroup.Divinium);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(TutorialMod.MOD_ID, name), block);

@@ -7,22 +7,27 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.passive.*;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.passive.FishEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class OtterEntity extends HostileEntity implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public OtterEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -51,11 +56,28 @@ public class OtterEntity extends HostileEntity implements IAnimatable {
 
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event){
         if (event.isMoving()){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.otter.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP ));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.otter.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP ));
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationEvent event) {
+        if(this.handSwinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.LOOP ));
+            this.handSwinging = false;
+        }
+
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState swimPredicate(AnimationEvent event) {
+        if (this.submergedInWater){
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP ));
+        }
         return PlayState.CONTINUE;
     }
 
@@ -63,7 +85,14 @@ public class OtterEntity extends HostileEntity implements IAnimatable {
     public void registerControllers(AnimationData animationData) {
         animationData.addAnimationController(new AnimationController(this, "controller",
         0, this::predicate));
+        animationData.addAnimationController(new AnimationController(this, "attackController",
+                0, this::attackPredicate));
+        animationData.addAnimationController(new AnimationController(this, "swimController",
+                0, this::swimPredicate));
     }
+
+
+
 
     @Override
     public AnimationFactory getFactory() {

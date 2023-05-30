@@ -8,7 +8,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.oxid.tutorialmod.TutorialMod;
 import net.oxid.tutorialmod.entity.custom.OtterEntity;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class OtterRenderer extends GeoEntityRenderer<OtterEntity> {

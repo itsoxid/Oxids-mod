@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.otter.idle": {
+		"idle": {
 			"loop": true,
 			"animation_length": 1.5,
 			"bones": {
@@ -350,7 +350,7 @@
 				}
 			}
 		},
-		"animation.otter.walk": {
+		"walk": {
 			"loop": true,
 			"animation_length": 0.6,
 			"bones": {
@@ -645,7 +645,7 @@
 				}
 			}
 		},
-		"animation.otter.swim": {
+		"swim": {
 			"loop": true,
 			"animation_length": 0.7,
 			"override_previous_animation": true,
@@ -872,7 +872,7 @@
 				}
 			}
 		},
-		"animation.otter.attack": {
+		"attack": {
 			"animation_length": 1.6,
 			"override_previous_animation": true,
 			"bones": {
@@ -2616,6 +2616,6 @@
 			}
 		}
 	},
-	"azurelib_format_version": 2,
-	"geckolib_format_version": 2
+	"geckolib_format_version": 2,
+	"azurelib_format_version": 2
 }

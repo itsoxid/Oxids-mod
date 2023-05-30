@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.oxid.tutorialmod.TutorialMod;
+import net.oxid.tutorialmod.block.custom.GemInfusionStationBlock;
 import net.oxid.tutorialmod.block.custom.HashCropBlock;
 import net.oxid.tutorialmod.block.custom.JumpyBlock;
 import net.oxid.tutorialmod.block.custom.SoulLaternBlock;
@@ -41,6 +42,10 @@ public class ModBlocks {
 
     public static final Block HASH_CROP = registerBlockWithoutItem("hash_crop",
             new HashCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
+
+    public static final Block GEM_INFUSING_STATION = registerBlock("gem_infusing_station",
+            new GemInfusionStationBlock(FabricBlockSettings.of(Material.METAL)
+                    .strength(4f).requiresTool().nonOpaque()), ModItemGroup.Divinium);
 
 
 

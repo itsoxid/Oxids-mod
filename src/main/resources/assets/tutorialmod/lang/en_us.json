@@ -11,6 +11,9 @@
   "item.tutorialmod.hash": "Hash",
   "item.tutorialmod.hash_seeds": "Hash seeds",
 
+  "item.tutorialmod.bar_brawl_music_disc": "DOGTOOTH Music Disc",
+  "item.tutorialmod.bar_brawl_music_disc.desc": "Tyler the Creator - DOGTOOTH",
+
   "block.tutorialmod.divinium_ore": "Divinium Ore",
   "block.tutorialmod.mithril_ore": "Mithril Ore",
   "block.tutorialmod.divinium_block": "Divinium Block",
@@ -29,6 +32,11 @@
   "block.tutorialmod.dogwood_planks": "Dogwood Planks",
   "block.tutorialmod.dogwood_leaves": "Dogwood Leaves",
   "block.tutorialmod.dogwood_sapling": "Dogwood Sapling",
+
+  "item.tutorialmod.divinium_helmet": "Divinium Helmet",
+  "item.tutorialmod.divinium_chestplate": "Divinium Chestplate",
+  "item.tutorialmod.divinium_leggings": "Divinium Boots",
+  "item.tutorialmod.divinium_boots": "Divinium Boots",
 
   "itemGroup.tutorialmod.divinium": "Divinium"
 }
